@@ -138,7 +138,10 @@ class Bot(commands.AutoShardedBot):
 
 
 # Creates Bot object
-bot = Bot(max_messages=1, guild_subscriptions=False)
+intents = discord.Intents.default()
+intents.members = True
+
+bot = Bot(max_messages=1, guild_subscriptions=False, intents = intents)
 
 
 @bot.listen()
